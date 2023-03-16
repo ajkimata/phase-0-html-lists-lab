@@ -11,15 +11,15 @@ describe("the <ul> tag", () => {
     expect(ul, hint).to.exist;
   });
 
-  it("has three child <li> tags with the correct content", () => {
+  it("has four child <li> tags with the correct content", () => {
     // find all direct child <li> elements in the <ul>
     const ul = document.querySelector("ul");
 
-    const hint = "The <ul> should have three <li> elements nested inside";
-    expect(ul.children, hint).to.have.lengthOf(3);
+    const hint = "The <ul> should have four <li> elements nested inside";
+    expect(ul.children, hint).to.have.lengthOf(4);
 
     // check the values of each <li> element
-    const [firstLi, secondLi, thirdLi] = ul.children;
+    const [firstLi, secondLi, thirdLi, fourthLi] = ul.children;
 
     expect(firstLi).to.have.tagName("li");
     expect(firstLi).to.contain.text("2 slices of bread");
@@ -29,6 +29,9 @@ describe("the <ul> tag", () => {
 
     expect(thirdLi).to.have.tagName("li");
     expect(thirdLi).to.contain.text("1 tbsp of butter");
+
+    expect(fourthLi).to.have.tagName("li");
+    expect(fourthLi).to.contain.text("1 frying pan");
   });
 
   it("contains a nested <ul> tag within a <li>", () => {
